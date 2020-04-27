@@ -1,0 +1,10 @@
+2020-04-27 11:37:00,358 [INFO] Activator:176 - 
+
+
+2020-04-27 11:37:00,378 [INFO] Activator:177 - !SESSION log4j initialized
+2020-04-27 11:38:20,628 [INFO] Activator:176 - 
+
+
+2020-04-27 11:38:20,628 [INFO] Activator:177 - !SESSION log4j initialized
+2020-04-27 11:38:28,078 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {}->http://sw-center.st.com:80: Socket Closed
+2020-04-27 11:38:28,078 [INFO] RetryExec:113 - Retrying request to {}->http://sw-center.st.com:80
