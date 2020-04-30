@@ -23,6 +23,6 @@
 #include<stdio.h>
 int main(void)
 {
-	printf("helloworl\n");
+	printf("helloworld\n");
 	for(;;);
 }
