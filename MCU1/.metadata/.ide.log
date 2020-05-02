@@ -1762,3 +1762,18 @@
 2020-05-01 20:33:39,081 [ERROR] ServerAccessManage:517 - User Cancel Download : stm32cube_fw_f4_v1250.zip.
 2020-05-01 20:33:39,084 [INFO] LoadServerPackagesThread:160 - End of LoadServerPackages Thread
 2020-05-01 20:33:39,270 [INFO] CheckServerUpdateThread:92 - End of CheckServer Thread
+2020-05-01 21:06:58,481 [INFO] MainUpdater:2230 - connection check result : 10
+2020-05-01 21:06:58,481 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Successfull proxy connection.
+2020-05-01 21:06:58,497 [INFO] McuFinderGlobals:40 - Set McuFinder mode to 2 (CubeIDE integrated)
+2020-05-01 21:06:58,497 [INFO] FinderPluginLoader:86 - Searching for filters in installed packs
+2020-05-01 21:06:58,950 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2020-05-01 21:06:58,950 [INFO] McuDetailPanel:181 - Set advertising image to C:/Users/Admin/STM32Cube/Repository/\PR_STM32Cube_GitHub_0320_V1.png
+2020-05-01 21:06:59,135 [INFO] McuFilterPanel:249 - Update 0 favorites MCUs
+2020-05-01 21:06:59,230 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2020-05-01 21:06:59,230 [INFO] BoardDetailPanel:180 - Set advertising image to C:/Users/Admin/STM32Cube/Repository/\PR_STM32Cube_GitHub_0320_V1.png
+2020-05-01 21:06:59,238 [INFO] BoardFilterPanel:211 - Update 0 favorites Boards
+2020-05-01 21:06:59,271 [INFO] CrossSelectorPresenter:1319 - Cross Selector saved comparison directory: C:\Users\Admin\.stmcufinder\plugins\mcufinder\mcu\cs_comparisons_mx
+2020-05-01 21:07:24,600 [INFO] DbMcusDocs:142 - JSON generation date=Thu Apr 16 10:39:08 EDT 2020 (1587047948)
+2020-05-01 21:07:24,675 [INFO] DbMcusDocs:77 - Found 563 MCUs documents
+2020-05-01 21:08:12,322 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] withoutVersionV1.25.0
+2020-05-01 21:08:25,859 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 551760624 Bytes (1073741824)
