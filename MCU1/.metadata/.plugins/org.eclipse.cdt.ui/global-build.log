@@ -1,23 +1,24 @@
-13:46:44 **** Clean-only build of configuration Debug for project data_copy ****
-make clean 
-make: *** No rule to make target 'clean'.  Stop.
-"make clean" terminated with exit code 2. Build might be incomplete.
-13:46:44 **** Build of configuration Debug for project data_copy ****
-make all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "startup/startup_stm32.o" "../startup/startup_stm32.s"
-arm-none-eabi-gcc "../startup/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"startup/sysmem.d" -MT"startup/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "startup/sysmem.o"
-arm-none-eabi-gcc "../src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/main.d" -MT"src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/main.o"
-arm-none-eabi-gcc -o "data_copy.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Admin\Downloads\original\data_copy-Eclipse\LinkerScript.ld" --specs=nosys.specs -Wl,-Map="data_copy.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: data_copy.elf
+17:04:42 **** Incremental Build of configuration Debug for project buttoninterface1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
+arm-none-eabi-gcc -o "buttoninterface1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Admin\Documents\MCU1 course\MCU1\buttoninterface1\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="buttoninterface1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: buttoninterface1.elf
  
-arm-none-eabi-size   data_copy.elf 
+arm-none-eabi-objdump -h -S  buttoninterface1.elf  > "buttoninterface1.list"
+arm-none-eabi-objcopy  -O binary  buttoninterface1.elf  "buttoninterface1.bin"
+arm-none-eabi-size   buttoninterface1.elf 
    text	   data	    bss	    dec	    hex	filename
-    812	      8	   1056	   1876	    754	data_copy.elf
+   8688	     20	   1636	  10344	   2868	buttoninterface1.elf
 Finished building: default.size.stdout
  
-arm-none-eabi-objdump -h -S  data_copy.elf  > "data_copy.list"
-Finished building: data_copy.list
+Finished building: buttoninterface1.bin
+Finished building: buttoninterface1.list
  
-arm-none-eabi-objcopy  -O binary  data_copy.elf  "data_copy.bin"
-Finished building: data_copy.bin
+ 
+17:04:48 **** Incremental Build of configuration Debug for project buttoninterface1 ****
+make -j8 all 
+arm-none-eabi-size   buttoninterface1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8688	     20	   1636	  10344	   2868	buttoninterface1.elf
+Finished building: default.size.stdout
  
