@@ -12,52 +12,53 @@
 #define __vo volatile
 
 //base addresses of FLASH and SRAM memories
-#define FLASH_BASEADDR		0x0800 0000U //base address of the flash memory
-#define SRAM1_BASEADDR  	0x2000 0000U //base address of SRAM1 112KB
-#define SRAM2_BASEADDR		0x2001 C000U //base address of SRAM2 16 KB
-#define ROM					0x1FFF 0000U //base address of the system memory
-#define OTP_BASEADDR		0x1FFF 7800U //base address of the OTP area
+#define FLASH_BASEADDR		0x08000000U //base address of the flash memory
+#define SRAM1_BASEADDR  	0x20000000U //base address of SRAM1 112KB
+#define SRAM2_BASEADDR		0x2001C000U //base address of SRAM2 16 KB
+#define ROM					0x1FFF0000U //base address of the system memory
+#define OTP_BASEADDR		0x1FFF7800U //base address of the OTP area
 #define SRAM				SRAM1_BASEADDR
 
 //base addresses of AHBx and APBx bus
 
-#define PERIPH_BASE			0x4000 0000U //base address of bus peripheral
-#define APB1PERIPH_BASE		0x4000 0000U //base address of APB1 bus domain
-#define	APB2PERIPH_BASE		0x4001 0000U //base address of APB2 bus domain
-#define	AHB1PERIPH_BASE		0x4002 0000U //base address of AHB1 bus domain
-#define AHB2PERIPH_BASE		0x5000 0000U //base address of AHB2 bus domain
+#define PERIPH_BASE			0x40000000U //base address of bus peripheral
+#define APB1PERIPH_BASE		0x40000000U //base address of APB1 bus domain
+#define	APB2PERIPH_BASE		0x40010000U //base address of APB2 bus domain
+#define	AHB1PERIPH_BASE		0x40020000U //base address of AHB1 bus domain
+#define AHB2PERIPH_BASE		0x50000000U //base address of AHB2 bus domain
 
 //base address of GPIOs hanging to AHB1 bus
 
-#define GPIOA_BASEADDR		0x4002 0000U //base address of GPIOA
-#define GPIOB_BASEADDR		0x4002 0400U //base address of GPIOB
-#define GPIOC_BASEADDR		0x4002 0800U //base address of GPIOC
-#define GPIOD_BASEADDR		0x4002 0C00U //base address of GPIOD
-#define GPIOE_BASEADDR		0x4002 1000U //base address of GPIOE
-#define GPIOF_BASEADDR		0x4002 1400U //base address of GPIOF
-#define GPIOG_BASEADDR		0x4002 1800U //base address of GPIOG
-#define GPIOH_BASEADDR		0x4002 1C00U //base address of GPIOH
-#define RCC_BASEADDR			0x4002 3800U //base address of RCC
+#define RCC_BASEADDR		0x40023800U //base address of RCC
+
+#define GPIOA_BASEADDR		0x40020000U //base address of GPIOA
+#define GPIOB_BASEADDR		0x40020400U //base address of GPIOB
+#define GPIOC_BASEADDR		0x40020800U //base address of GPIOC
+#define GPIOD_BASEADDR		0x40020C00U //base address of GPIOD
+#define GPIOE_BASEADDR		0x40021000U //base address of GPIOE
+#define GPIOF_BASEADDR		0x40021400U //base address of GPIOF
+#define GPIOG_BASEADDR		0x40021800U //base address of GPIOG
+#define GPIOH_BASEADDR		0x40021C00U //base address of GPIOH
 
 //base address of peripherals hanging to APB1 bus
 
-#define I2C1_BASEADDR		0x4000 5400U //base address of I2C1
-#define I2C2_BASEADDR		0x4000 5800U //base address of I2C2
-#define I2C3_BASEADDR		0x4000 5C00U //base address of I2C3
-#define SPI2_BASEADDR		0x4000 3800U //base address of SPI2
-#define SPI3_BASEADDR		0x4000 3C00U //base address of SPI3
-#define USART2_BASEADDR		0x4000 4400U //base address of USART2
-#define USART3_BASEADDR		0x4000 4800U //base address of USART3
-#define UART4_BASEADDR		0x4000 4C00U //base address of USART4
-#define UART5_BASEADDR		0x4000 5000U //base address of USART5
+#define I2C1_BASEADDR		0x40005400U //base address of I2C1
+#define I2C2_BASEADDR		0x40005800U //base address of I2C2
+#define I2C3_BASEADDR		0x40005C00U //base address of I2C3
+#define SPI2_BASEADDR		0x40003800U //base address of SPI2
+#define SPI3_BASEADDR		0x40003C00U //base address of SPI3
+#define USART2_BASEADDR		0x40004400U //base address of USART2
+#define USART3_BASEADDR		0x40004800U //base address of USART3
+#define UART4_BASEADDR		0x40004C00U //base address of USART4
+#define UART5_BASEADDR		0x40005000U //base address of USART5
 
 //base address of peripheral hanging to APB2 bus
 
-#define SPI1_BASEADDR		0x4001 3000U //base address of SPI1
-#define USART1_BASEADDR		0x4001 1000U //base address of USART1
-#define USART6_BASEADDR		0x4001 1400U //base address of USAR6
-#define EXT1_BASEDDR		0x4001 3C00U //base address of EXT1
-#define SYSCFG_BASEDADDR	0x4001 3800U //base address of SYSCFG
+#define SPI1_BASEADDR		0x40013000U //base address of SPI1
+#define USART1_BASEADDR		0x40011000U //base address of USART1
+#define USART6_BASEADDR		0x40011400U //base address of USAR6
+#define EXT1_BASEDDR		0x40013C00U //base address of EXT1
+#define SYSCFG_BASEDADDR	0x40013800U //base address of SYSCFG
 
 
 
@@ -113,6 +114,7 @@ typedef struct
 
 }RCC_RegDef_t;
 
+#define RCC			((RCC_RegDef_t*)RCC_BASEADDR)
 #define GPIOA 		((GPIO_RegDef_t*)GPIOA_BASEADDR)
 #define GPIOB 		((GPIO_RegDef_t*)GPIOB_BASEADDR)
 #define GPIOC 		((GPIO_RegDef_t*)GPIOC_BASEADDR)
@@ -121,7 +123,7 @@ typedef struct
 #define GPIOF 		((GPIO_RegDef_t*)GPIOF_BASEADDR)
 #define GPIOG 		((GPIO_RegDef_t*)GPIOG_BASEADDR)
 #define GPIOH 		((GPIO_RegDef_t*)GPIOH_BASEADDR)
-#define RCC			((RCC_RegDef_t*)RCC_BASEADDR)
+
 
 
 /*clock enable macros for GPIOx peripherals*/
@@ -201,4 +203,6 @@ typedef struct
 #define DISABLE		0
 #define SET			ENABLE
 #define RESET		DISABLE
+#define GPIO_PIN_SET	SET
+#define GPIO_PIN_RESET	RESET
 #endif /* INC_STM32F446XX_H_ */

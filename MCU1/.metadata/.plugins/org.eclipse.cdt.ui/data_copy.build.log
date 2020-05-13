@@ -1,22 +1,10 @@
-13:46:44 **** Build of configuration Debug for project data_copy ****
+12:43:42 **** Build of configuration Debug for project data_copy ****
 make all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "startup/startup_stm32.o" "../startup/startup_stm32.s"
-arm-none-eabi-gcc "../startup/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"startup/sysmem.d" -MT"startup/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "startup/sysmem.o"
-arm-none-eabi-gcc "../src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/main.d" -MT"src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/main.o"
-arm-none-eabi-gcc -o "data_copy.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Admin\Downloads\original\data_copy-Eclipse\LinkerScript.ld" --specs=nosys.specs -Wl,-Map="data_copy.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: data_copy.elf
- 
 arm-none-eabi-size   data_copy.elf 
    text	   data	    bss	    dec	    hex	filename
     812	      8	   1056	   1876	    754	data_copy.elf
 Finished building: default.size.stdout
  
-arm-none-eabi-objdump -h -S  data_copy.elf  > "data_copy.list"
-Finished building: data_copy.list
- 
-arm-none-eabi-objcopy  -O binary  data_copy.elf  "data_copy.bin"
-Finished building: data_copy.bin
- 
 
-13:46:46 Build Finished. 0 errors, 0 warnings. (took 2s.64ms)
+12:43:42 Build Finished. 0 errors, 0 warnings. (took 560ms)
 
