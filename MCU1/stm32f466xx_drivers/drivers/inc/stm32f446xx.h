@@ -11,6 +11,23 @@
 #include <stdint.h>
 #define __vo volatile
 
+/*ARM Cortex Mu-procsr NVIC ISERx register addresses*/
+
+#define NVIC_ISER0			((__vo uint32_t*)0xE00E100)
+#define NVIC_ISER1			((__vo uint32_t*)0xE00E104)
+#define NVIC_ISER2			((__vo uint32_t*)0xE00E108)
+#define NVIC_ISER3			((__vo uint32_t*)0xE00E10C)
+
+/*#define NVIC_ISER4			((__vo uint32_t*)0xE00E100)
+#define NVIC_ISER5			((__vo uint32_t*)0xE00E100)
+#define NVIC_ISER6			((__vo uint32_t*)0xE00E100)*/
+
+/*ARM Cortex Mu-procsr NVIC ICERx register addresses*/
+#define NVIC_ICER0			((__vo uint32_t*)0xE00E180)
+#define NVIC_ICER1			((__vo uint32_t*)0xE00E184)
+#define NVIC_ICER2			((__vo uint32_t*)0xE00E188)
+#define NVIC_ICER3			((__vo uint32_t*)0xE00E18C)
+
 //base addresses of FLASH and SRAM memories
 #define FLASH_BASEADDR		0x08000000U //base address of the flash memory
 #define SRAM1_BASEADDR  	0x20000000U //base address of SRAM1 112KB
@@ -57,7 +74,7 @@
 #define SPI1_BASEADDR		0x40013000U //base address of SPI1
 #define USART1_BASEADDR		0x40011000U //base address of USART1
 #define USART6_BASEADDR		0x40011400U //base address of USAR6
-#define EXT1_BASEDDR		0x40013C00U //base address of EXT1
+#define EXTI_BASEDDR		0x40013C00U //base address of EXT1
 #define SYSCFG_BASEDADDR	0x40013800U //base address of SYSCFG
 
 
@@ -114,6 +131,32 @@ typedef struct
 
 }RCC_RegDef_t;
 
+//peripheral structure definition for EXTI
+typedef struct
+{
+	__vo uint32_t IMR;
+	__vo uint32_t EMR;
+	__vo uint32_t RTSR;
+	__vo uint32_t FTSR;
+	__vo uint32_t SWIER;
+	__vo uint32_t PR;
+}EXTI_RegDef_t;
+//peripheral structure definition for SYSCFG
+typedef struct
+{
+	__vo uint32_t MEMRMP;
+	__vo uint32_t PMC;
+	__vo uint32_t EXTICR[4];
+	//EXTICR2;
+	//EXTICR3;
+	//EXTICR4;
+	 uint32_t RESERVED[2];
+	__vo uint32_t CMPCR;
+	uint32_t RESERVED2[2];
+	__vo uint32_t CFGR;
+}SYSCFG_RegDef_t;
+
+
 #define RCC			((RCC_RegDef_t*)RCC_BASEADDR)
 #define GPIOA 		((GPIO_RegDef_t*)GPIOA_BASEADDR)
 #define GPIOB 		((GPIO_RegDef_t*)GPIOB_BASEADDR)
@@ -124,7 +167,9 @@ typedef struct
 #define GPIOG 		((GPIO_RegDef_t*)GPIOG_BASEADDR)
 #define GPIOH 		((GPIO_RegDef_t*)GPIOH_BASEADDR)
 
+#define EXTI		((EXTI_RegDef_t*)EXTI_BASEDDR)
 
+#define SYSCFG		((SYSCFG_RegDef_t*)SYSCFG_BASEDADDR)
 
 /*clock enable macros for GPIOx peripherals*/
 
@@ -205,11 +250,17 @@ typedef struct
 #define GPIOG_REG_RESET()		do{(RCC -> AHB1RSTR |= ( 1 << 6 )); (RCC -> AHB1RSTR &= ~( 1 << 6 ));}while(0)
 #define GPIOH_REG_RESET()		do{(RCC -> AHB1RSTR |= ( 1 << 7 )); (RCC -> AHB1RSTR &= ~( 1 << 7 ));}while(0)
 
-
-
-
+//returns port code for given GPIObase address
+#define GPIO_BASEADDR_TO_CODE(x)	(	(x == GPIOA) ? 0 :\
+										(x == GPIOB) ? 1 :\
+										(x == GPIOC) ? 2 :\
+										(x == GPIOD) ? 3 :\
+										(x == GPIOE) ? 4 :\
+										(x == GPIOF) ? 5 :\
+										(x == GPIOG) ? 6 :\
+										(x == GPIOH) ? 7 :0		)
 /*
- * some generic macros
+		* some generic macros
  */
 #define ENABLE 		1
 #define DISABLE		0

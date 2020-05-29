@@ -1,4 +1,4 @@
-12:43:42 **** Build of configuration Debug for project peripheral_clock ****
+13:06:09 **** Incremental Build of configuration Debug for project peripheral_clock ****
 make -j8 all 
 arm-none-eabi-size   peripheral_clock.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   peripheral_clock.elf
 Finished building: default.size.stdout
  
 
-12:43:43 Build Finished. 0 errors, 0 warnings. (took 484ms)
+13:06:09 Build Finished. 0 errors, 0 warnings. (took 346ms)
 

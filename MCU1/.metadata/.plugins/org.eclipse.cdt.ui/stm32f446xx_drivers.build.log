@@ -1,10 +1,25 @@
-13:04:03 **** Incremental Build of configuration Debug for project stm32f446xx_drivers ****
+17:14:44 **** Incremental Build of configuration Debug for project stm32f446xx_drivers ****
 make -j8 all 
+arm-none-eabi-gcc "../drivers/src/stm32f446xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DDEBUG -DNUCLEO_F446RE -c -I"C:/Users/Admin/Documents/MCU1 course/MCU1/stm32f466xx_drivers/Inc" -I"C:/Users/Admin/Documents/MCU1 course/MCU1/stm32f466xx_drivers/drivers/inc" -I../Inc -I"C:/Users/Admin/Documents/MCU1 course/MCU1/stm32f466xx_drivers/drivers/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"drivers/src/stm32f446xx_gpio_driver.d" -MT"drivers/src/stm32f446xx_gpio_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/src/stm32f446xx_gpio_driver.o"
+arm-none-eabi-gcc "../Src/001LEDToggle.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DDEBUG -DNUCLEO_F446RE -c -I"C:/Users/Admin/Documents/MCU1 course/MCU1/stm32f466xx_drivers/Inc" -I"C:/Users/Admin/Documents/MCU1 course/MCU1/stm32f466xx_drivers/drivers/inc" -I../Inc -I"C:/Users/Admin/Documents/MCU1 course/MCU1/stm32f466xx_drivers/drivers/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/001LEDToggle.d" -MT"Src/001LEDToggle.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/001LEDToggle.o"
+../Src/001LEDToggle.c: In function 'delay':
+../Src/001LEDToggle.c:13:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+arm-none-eabi-gcc -o "stm32f446xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Admin\Documents\MCU1 course\MCU1\stm32f466xx_drivers\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f446xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f446xx_drivers.elf
+ 
+arm-none-eabi-objdump -h -S  stm32f446xx_drivers.elf  > "stm32f446xx_drivers.list"
+arm-none-eabi-objcopy  -O binary  stm32f446xx_drivers.elf  "stm32f446xx_drivers.bin"
 arm-none-eabi-size   stm32f446xx_drivers.elf 
+Finished building: stm32f446xx_drivers.bin
+ 
+Finished building: stm32f446xx_drivers.list
+ 
    text	   data	    bss	    dec	    hex	filename
-   1496	      8	   1568	   3072	    c00	stm32f446xx_drivers.elf
+   2000	      8	   1568	   3576	    df8	stm32f446xx_drivers.elf
 Finished building: default.size.stdout
  
 
-13:04:03 Build Finished. 0 errors, 0 warnings. (took 371ms)
+17:14:45 Build Finished. 0 errors, 1 warnings. (took 1s.222ms)
 

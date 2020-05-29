@@ -1,4 +1,4 @@
-12:43:33 **** Build of configuration Debug for project Button_interrupt ****
+13:06:06 **** Incremental Build of configuration Debug for project Button_interrupt ****
 make all 
 arm-none-eabi-size   Button_interrupt.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   Button_interrupt.elf
 Finished building: default.size.stdout
  
 
-12:43:34 Build Finished. 0 errors, 0 warnings. (took 972ms)
+13:06:06 Build Finished. 0 errors, 0 warnings. (took 548ms)
 
