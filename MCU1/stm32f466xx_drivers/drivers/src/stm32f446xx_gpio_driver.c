@@ -331,7 +331,7 @@ pGPIOx->ODR = pGPIOx->ODR^(1<<PinNumber);
  * IRQ configuration ISR handling
  */
 
-void GPIO_IRQConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t EnorDi)
+void GPIO_IRQITConfig(uint8_t IRQNumber,  uint8_t EnorDi)
 {
 	if(EnorDi == ENABLE)
 	{
@@ -371,6 +371,16 @@ void GPIO_IRQConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t EnorDi)
 	}
 }
 
+void GPIO_IRQPriorityConfig(uint8_t IRQNumber,uint8_t IRQPriority)
+{
+	//1.finding ipr register
+	uint8_t iprx = IRQNumber /4;
+	uint8_t iprx_section = IRQNumber % 4;
+
+uint8_t shift_amount = (8*iprx_section) + (8 - NO_PR_BITS_IMPLEMENTED);
+
+	*(NVIC_PR_BASE_ADDR + iprx*4) |= ( IRQPriority << shift_amount);
+}
 /*
  * ISR handling
  *

@@ -1,0 +1,5 @@
+stm32f446xx_spi_driver.c:23:6:SPI_PeriClkCtrl	16	static
+stm32f446xx_spi_driver.c:65:6:SPI_Init	24	static
+stm32f446xx_spi_driver.c:97:6:SPI_DeInit	16	static
+stm32f446xx_spi_driver.c:102:9:SPI_GetFlagStatus	16	static
+stm32f446xx_spi_driver.c:115:6:SPI_SendData	24	static

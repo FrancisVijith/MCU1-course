@@ -7,7 +7,7 @@
 #include"stm32f446xx.h"
 #include"stm32f446xx_gpio_driver.h"
 
-int delay(int x)
+void delay(int x)
 {
 	for(int i = 0; i < x ; i++);
 }
